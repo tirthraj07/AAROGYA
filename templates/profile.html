@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/static/profile.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='profile.js') }}"></script>
+</head>
+<body>
+
+    <div class="home"><a href="/indexHTML"><img src="/static/img_about_us/home_icon.png" alt="" width="70px"></a></div>
+    
+
+    <section class="sidebar">
+        <div class="logo"></div>
+        <div class="profile_pic"></div>
+        <div class="info">
+            <div class="name_sidebar">Name Surname</div>
+            <div class="email_sidebar">sample@gmail.com</div>
+        </div>
+        <section class="side-menu">
+            <div class="option"><a href="#history">History</a></div>
+            <!-- <div class="option"><a href="#calender">Calender</a></div> -->
+            <div class="option"><a href="/indexHTML">Home</a></div>
+        </section>
+    </section>
+    
+    <section class="page page1">
+        <h1 id="PI">PERSONAL INFORMATION</h1>
+
+        <section class="info">
+            <section class="name"><u>Full Name:</u>
+            <div>
+                Name Middle-Name Surname
+            </div>
+            <hr>
+            </section>
+            <section class="email"><u>Email:</u>
+            <div>
+                sample@gamil.com
+            </div>
+            <hr>
+            </section>
+            <section class="username"><u>Username</u>
+            <div>
+                Username
+            </div>
+            <hr>
+            </section>
+            <section class="age"><u>Age:</u>
+            <div>
+                18
+            </div>
+            <hr>
+            </section>
+            <section class="gender"><u>Gender:</u>
+            <div>
+                Male
+            </div>
+            <hr>
+            </section>
+            <section class="address"><u>Address:</u>
+            <div>
+                XYZ, Pune 411009
+            </div>
+            <hr>
+            </section>
+        </section>
+
+        <div class="scroll-down"><button onclick="scrollDown()"><img src="https://cdn4.iconfinder.com/data/icons/navigation-40/24/chevron-force-down-256.png" alt="" width="70px"></button></div>
+    </section>
+
+    <section class="page page2" id="history">
+
+        <h1 id="ML">MEDICAL LOG</h1>
+
+        <section class="history-card">
+
+            <section class="logList" id="logList"></section>
+            <section class="logContainer" id="logContainer">
+                <h2>Add A New Log:</h2>
+                <form action="/" method="POST" enctype="multipart/form-data">
+                    <p id="date-text">Date:</p>
+                    <input type="date" id="date" name="date" required>
+                    <p id="doctor-text">Doctor:</p>
+                    <input type="text" id="doctor" name="doctor" placeholder="Dr." required>
+                    <textarea name="description" id="description" cols="30" rows="5" placeholder="Description" required></textarea>
+                    <input type="file" class="image" name="image" accept="image/*" required>
+                    <input type="submit" class="addLogButton" onclick="addLog()" value="Add Log">
+                </form>
+
+            </section>
+        </section>
+
+    </section>
+
+    <script src="/static/profile.js"></script>
+
+</body>
+</html>

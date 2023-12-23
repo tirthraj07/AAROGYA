@@ -1,0 +1,447 @@
+body{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    overflow-x: hidden;
+}
+
+/*
+Custom Scroll bar - W3School
+*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/*--End*/
+
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-box{
+    overflow: hidden;
+    margin: 0px;
+    border: 1px solid rgba(24, 201, 136,1);
+    width: 100%;
+    height: 500px;
+    background-color: rgba(24, 201, 136,1);
+    box-sizing: border-box;
+    border-radius: 70%;
+    transform: scale(1.5);
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    /* border: 1px solid black; */
+    /* color:white; */
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    display: inline-block;
+    z-index: 2;
+    font-size: 30px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    letter-spacing: 1px;
+    transform: translate(-270px, -170px);
+    font-family: 'Oswald', sans-serif;
+    /* text-shadow: 2px 2px 2px black; */
+    mix-blend-mode: multiply;
+  /* filter: contrast(1); */
+}
+
+
+.nav-bar{
+    /* border: 1px solid black; */
+    position: absolute;
+    display: flex;
+    top: 50%;
+    right: 50%;
+    z-index: 2;
+    transform: translate(425px, -150px);
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    width:450px;
+    height: 45px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color:rgb(196, 255, 248);
+    text-shadow: 1px 1px 1px black;
+    font-size: 20px;
+}
+
+
+.nav-bar .item:hover{
+    color:white;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor:pointer;
+    font-size: 21px;
+}
+
+.hero{
+    /* border: 1px solid black; */
+    height: 500px;
+    width: 100%;
+    display:inline-block;
+    /* background-color: blue; */
+    transform: translate(0px,170px);
+}
+
+.hero img{
+    /* border: 1px solid black; */
+    transform: translate(950px,0px);
+}
+
+.welcome-note{
+    display: inline-block;
+    /* border:1px solid black; */
+    width: 500px;
+    height:70px;
+    font-size: 40px;
+    transform: translate(100px,-290px);
+    /* font-family: 'Anton', sans-serif; */
+    font-family: 'Oswald', sans-serif;
+    /* font-family: Helvetica,sans-serif; */
+    /* letter-spacing: 3px; */
+    text-align: center;
+    color:rgb(196, 255, 248);
+    text-shadow: 1px 1px 2px black;
+    cursor:default;
+    animation-name:fade-in-text;
+    animation-duration: 0.5s;
+
+}
+
+.note{
+    display: inline-block;
+    /* border: 1px solid black; */
+    width: 400px;
+    height: 250px;
+    transform: translate(-360px,-100px);
+    font-size: 10px;
+    padding: 15px;
+    font-family: 'Roboto', sans-serif;
+    color:#F2F2F2;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 15px;
+    animation-name:fade-in-text;
+    animation-duration: 3s;
+    cursor:default;
+}
+
+.note::selection{
+    background-color: green;
+}
+
+@keyframes fade-in-text {
+    0%{
+        color:rgba(242, 242, 242,0)
+    }
+    100%{
+        color:rgba(242, 242, 242,1)
+    }
+    
+}
+
+.card{
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgb(19, 212, 141);
+    border-radius: 10%;
+    height: 250px;
+    width: 190px;
+    z-index:3;
+    /* transform: translate(200px,50px); */
+    box-shadow: 2px 2px 1px rgb(135,135,135);
+    /* background-color: rgba(24, 201, 136,1); */
+    background-color: rgb(19, 212, 141);
+    transition: height 0.5s,
+                width 0.5s,
+                box-shadow 0.5s;
+
+}
+
+.addiction-card:hover,.depression-card:hover,.cancer-card:hover{
+    /* transform: scale(1.1); */
+    height: 260px;
+    width: 200px;
+    box-shadow: -2px 2px 5px black;
+    outline:2px;
+    outline-offset: 3px;
+    outline-style: solid;
+    outline-color: rgb(135,135,135);
+}
+
+.depression-card{
+    transform: translate(450px,30px);
+}
+
+.depression-card img{
+    transform: translate(20px);
+}
+
+.depression-card:hover img{
+    transform:scale(1.1) translate(25px,10px);
+}
+
+.depression-card div{
+    /* border: 1px solid black; */
+    height: 50px;
+    transform: translateY(10px);
+    text-align: center;
+    font-family: 'Pathway Extreme', sans-serif;
+    color:rgb(196, 255, 248);
+    font-size: 20px;
+    transition: font-size 1s,
+                color 0.5s,
+                transform 0.5s;
+                text-decoration: 0.7s;
+}
+
+.depression-card:hover div{
+    transform: translateY(25px);
+    color:white;
+    font-size: 25px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.addiction-card{
+    transform: translate(200px,30px);
+}
+
+.addiction-card img{
+    transform: translate(20px);
+    transition: transform 1.5;
+}
+
+.addiction-card:hover img{
+    transform:scale(1.1) translate(25px,10px);
+}
+
+.addiction-card div{
+    /* border: 1px solid black; */
+    height: 50px;
+    transform: translateY(10px);
+    text-align: center;
+    font-family: 'Pathway Extreme', sans-serif;
+    color:rgb(196, 255, 248);
+    font-size: 20px;
+    transition: font-size 1s,
+                color 0.5s,
+                transform 0.5s;
+                text-decoration: 0.7s;
+}
+
+.addiction-card:hover div{
+    transform: translateY(25px);
+    color:white;
+    font-size: 25px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.cancer-card{
+    transform: translate(700px,24px);
+}
+
+
+.cancer-card img{
+    transform: translate(20px);
+}
+
+.cancer-card:hover img{
+    transform:scale(1.1) translate(25px,10px);
+}
+
+.cancer-card div{
+    /* border: 1px solid black; */
+    height: 50px;
+    transform: translateY(10px);
+    text-align: center;
+    font-family: 'Pathway Extreme', sans-serif;
+    color:rgb(196, 255, 248);
+    font-size: 20px;
+    transition: font-size 1s,
+                color 0.5s,
+                transform 0.5s;
+                text-decoration: 0.7s;
+}
+
+.cancer-card:hover div{
+    transform: translateY(25px);
+    color:white;
+    font-size: 25px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.about-aarogya-section{
+    margin-top: 50px;
+    width: 100%;
+    height:2000px;
+    border-top: 1px solid black;
+    /* border:1px solid black; */
+    font-family: 'Oswald', sans-serif;
+    
+}
+
+.about-aarogya-section .header{
+    display: block;
+    /* border: 1px solid black; */
+    margin: 35px auto;
+    position: relative;
+    height: 75px;
+    width: 350px;
+    /* transform: translate(525px,35px); */
+    text-align: center;
+    font-size: 45px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+.text{
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    border: 1px solid black;
+    width: 750px;
+    height: 250px;
+    background-color: rgba(0,0,0,0.5);
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 17px;
+    line-height: 30px;
+    color:#F2F2F2
+}
+
+.image1{
+    display: inline-block;
+    mix-blend-mode: multiply;
+    /* border: 1px solid black; */
+}
+
+.text1{
+    transform: translate(-100px,-100px);
+}
+
+.image2{
+    /* border: 1px solid black; */
+    display: inline-block;
+    mix-blend-mode: multiply;
+    transform: translate(990px,0px);
+}
+
+.text2{
+    transform: translate(-200px,-70px);
+}
+
+.image3{
+    /* border:1px solid black; */
+    display: inline-block;
+    margin-left: 35px;
+}
+
+.text3{
+    transform: translate(-50px,-100px);
+}
+
+.image4{
+    display: inline-block;
+    /* border:1px solid black; */
+    transform: translate(990px,100px)
+}
+
+.text4{
+    transform: translate(-200px,-10px);
+    line-height: 40px;
+}
+
+.contact-us-footer{
+    display: block;
+    height: 300px;
+    /* border: 1px solid black; */
+    /* background-color: rgb(141,95,197); */
+    background-color: rgba(24, 201, 136,1);
+    background-image: url('https://rocketman.learnwagtail.com/static/images/contact-overlay.3bbaddf71379.png');
+}
+
+.contact-us-footer .message{
+    display: inline-block;
+    width: 950px;
+    height: 150px;
+    /* border: 1px solid black; */
+    margin-top: 25px;
+    margin-left: 50px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    line-height: 30px;
+    letter-spacing: 1px;
+    /* font-size: 25px; */
+}
+
+.contact-us-button{
+    display: inline-block;
+    border: 1px solid black;
+    height: 45px;
+    width:200px;
+    font-size: 25px;
+    padding: 15px 5px 5px 5px;
+    transform: translate(200px,-40px);
+    background-color: white;
+    text-align: center;
+    transition: background-color 0.25s,
+                text-decoration 0.5s;
+}
+
+.contact-us-button:hover{
+    /* height: 35px; */
+    /* width: 140px; */
+    /* font-weight: 550; */
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    background-color: rgb(181,183,187);
+}
+
+.footer{
+    display: block;
+    border: 1px solid black;
+    height: 100px;
+    background-color: black;
+    box-shadow: -2px -2px 1px black;
+}
+
+.text-footer{
+    display: block;
+    margin: 25px auto;
+    width:500px;
+    height:50px;
+    color:rgba(255,255,231,0.7);
+    /* border: 1px solid white; */
+    text-align: center;
+}

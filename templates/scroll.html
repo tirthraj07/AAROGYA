@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parallax Scrolling Example</title>
+  <style>
+    /* CSS for the parallax scrolling effect */
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .parallax {
+      height: 100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      text-align: center; 
+    }
+
+    .parallax:nth-child(even) {
+      background-color: #333;
+    }
+
+    .parallax:nth-child(odd) {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax" style="background-image: url('https://img.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28312.jpg?w=1380&t=st=1686150895~exp=1686151495~hmac=e9e28e61fd36d64936bc14d53892ee6dabb941e684a3807746f37f6838e9096f');">
+    <div class="parallax-content">
+      <h1>Section 1</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet augue semper, posuere justo ut, pharetra turpis.</p>
+    </div>
+  </div>
+
+  <div class="parallax" style="background-image: url('https://img.freepik.com/free-photo/gray-concrete-wall_53876-88973.jpg?w=1060&t=st=1686150779~exp=1686151379~hmac=9b346b8013bb6da4285a960dea20cbc05003277f76397dd995567ed67bd95e90');">
+    <div class="parallax-content">
+      <h1>Section 2</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet augue semper, posuere justo ut, pharetra turpis.</p>
+    </div>
+  </div>
+
+  <div class="parallax" style="background-image: url('https://img.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28312.jpg?w=1380&t=st=1686150895~exp=1686151495~hmac=e9e28e61fd36d64936bc14d53892ee6dabb941e684a3807746f37f6838e9096f');">
+    <div class="parallax-content">
+      <h1>Section 3</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet augue semper, posuere justo ut, pharetra turpis.</p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for the parallax scrolling effect
+    window.addEventListener('scroll', function() {
+      let scrollPosition = window.pageYOffset;
+
+      document.querySelectorAll('.parallax').forEach(function(parallax) {
+        let parallaxOffset = parallax.offsetTop;
+        let parallaxSpeed = parallax.getAttribute('data-speed');
+
+        parallax.style.backgroundPositionY = (scrollPosition - parallaxOffset) * parallaxSpeed + 'px';
+      });
+    });
+  </script>
+</body>
+</html>

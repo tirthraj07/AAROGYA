@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+
+        html{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            padding: 0px;
+            margin:0px;
+            box-sizing: border-box;
+        }
+    
+        .outer-box{
+            position:relative;
+            background-image: linear-gradient();background: rgb(99,123,112);
+            background: radial-gradient(circle, rgba(99,123,112,0.5) 49%, rgba(50,59,55,0.5) 85%, rgba(0,0,0,0.5) 100%);
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* background-color: yellow; */
+        }
+
+        .glass{
+            position: absolute;
+            z-index: 2;
+            /* border: 1px solid black; */
+            width:600px;
+            height: 400px;
+            backdrop-filter:blur(10px);
+            border-radius: 30px;
+            background: linear-gradient(100deg,rgba(255,255,255,0.8),rgba(255,255,255,0.8));
+            box-shadow: 0 10px 26px 0 rgba(0,0,0,0.5);
+        }
+
+        .login{
+            height: 400px;
+            /* border: 1px solid black; */
+
+            /* border:1px solid black; */
+            text-align: center;
+            /* text-decoration: underline; */
+        }
+
+        h1{
+            display: inline-block;
+            position: absolute;
+            z-index: 3;
+            left:41%;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 5px;
+            transform: translateY(10px);
+        }
+
+        img{
+            transform: translateX(-7px) translateY(-2px);
+        }
+
+        input{
+            border:none;
+            margin-top: 30px;
+            width: 400px;
+            height: 50px;
+            text-align: center;
+            font-size: large;
+            font-family: monospace;
+        }
+        .proceed-button{
+            display: block;
+            border: none;
+            background-color: white;
+            width: 100px;
+            height: 50px;
+            /* transform: translateX(35vh) translateY(2vh); */
+            transition: all 0.5s;
+            /* text-decoration: none !important; */
+            position: relative;
+            top: 10px;
+            left: 41%;
+        }
+
+        .proceed-button:hover{
+            background-color: black;
+            color:white
+        }
+
+        #exit-button{
+            position:relative;
+            top:10px;
+            left:44%;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+
+        .class_display_none{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer-box">
+        <div class="box">
+            <div class="glass">
+                <div class="login">
+                    <h1>LOGIN</h1>
+
+                    <button id="exit-button" onclick="exitLogin()"><img src="https://www.pngplay.com/wp-content/uploads/6/Exit-Logo-PNG-HD-Quality.png" width="50px" alt=""></button>
+
+                    <form>
+                        <input required type="username" name="username" placeholder="Type Your Username">
+                        <input required type="email" name="email" placeholder="Type Your Email">
+                        <input required type="password" name="password" placeholder="Type Your Password">
+                        <button class="proceed-button" type="submit" onclick="proceedFn()">Proceed</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
