@@ -1,5 +1,4 @@
 # AAROGYA
-Website Link: https://aarogya--tirthraj07.repl.co/
 
 Source Code: https://replit.com/@tirthraj07/AAROGYA#main.py
 
